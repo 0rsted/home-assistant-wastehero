@@ -1,0 +1,63 @@
+type: entities
+title: Affald
+entities:
+  - type: custom:template-entity-row
+    icon: mdi:trash-can-outline
+    name: '{{ state_attr(''sensor.trash_pickups_raw5'', ''container'')[''waste_fraction''][''name''] }}'
+    state: '{{ state_attr(''sensor.trash_pickups_raw5'', ''scheduled_at'') }}'
+    secondary: '{{ state_attr(''sensor.trash_pickups_raw5'', ''container'')[''container_type''][''name''] }}'
+    active: >-
+      {{ state_attr('sensor.trash_pickups_raw5', 'scheduled_at') ==
+      now().strftime('%Y-%m-%d') }}
+    entity: sensor.trash_pickups_raw5
+    condition: '{{ states(''sensor.trash_pickups_raw5'') }}'
+  - type: custom:template-entity-row
+    icon: mdi:trash-can-outline
+    name: '{{ state_attr(''sensor.trash_pickups_raw4'', ''container'')[''waste_fraction''][''name''] }}'
+    state: '{{ state_attr(''sensor.trash_pickups_raw4'', ''scheduled_at'') }}'
+    secondary: '{{ state_attr(''sensor.trash_pickups_raw4'', ''container'')[''container_type''][''name''] }}'
+    active: >-
+      {{ state_attr('sensor.trash_pickups_raw4', 'scheduled_at') ==
+      now().strftime('%Y-%m-%d') }}
+    entity: sensor.trash_pickups_raw4
+    condition: '{{ states(''sensor.trash_pickups_raw4'') }}'
+  - type: custom:template-entity-row
+    icon: mdi:trash-can-outline
+    name: '{{ state_attr(''sensor.trash_pickups_raw3'', ''container'')[''waste_fraction''][''name''] }}'
+    state: '{{ state_attr(''sensor.trash_pickups_raw3'', ''scheduled_at'') }}'
+    secondary: '{{ state_attr(''sensor.trash_pickups_raw3'', ''container'')[''container_type''][''name''] }}'
+    active: >-
+      {{ state_attr('sensor.trash_pickups_raw3', 'scheduled_at') ==
+      now().strftime('%Y-%m-%d') }}
+    entity: sensor.trash_pickups_raw3
+    condition: '{{ states(''sensor.trash_pickups_raw3'') }}'
+  - type: custom:template-entity-row
+    icon: mdi:trash-can-outline
+    name: '{{ state_attr(''sensor.trash_pickups_raw2'', ''container'')[''waste_fraction''][''name''] }}'
+    state: '{{ state_attr(''sensor.trash_pickups_raw2'', ''scheduled_at'') }}'
+    secondary: '{{ state_attr(''sensor.trash_pickups_raw2'', ''container'')[''container_type''][''name''] }}'
+    active: >-
+      {{ state_attr('sensor.trash_pickups_raw2', 'scheduled_at') ==
+      now().strftime('%Y-%m-%d') }}
+    entity: sensor.trash_pickups_raw2
+    condition: '{{ states(''sensor.trash_pickups_raw2'') }}'
+  - type: custom:template-entity-row
+    icon: mdi:trash-can-outline
+    name: '{{ state_attr(''sensor.trash_pickups_raw1'', ''container'')[''waste_fraction''][''name''] }}'
+    state: '{{ state_attr(''sensor.trash_pickups_raw1'', ''scheduled_at'') }}'
+    secondary: '{{ state_attr(''sensor.trash_pickups_raw1'', ''container'')[''container_type''][''name''] }}'
+    active: >-
+      {{ state_attr('sensor.trash_pickups_raw1', 'scheduled_at') ==
+      now().strftime('%Y-%m-%d') }}
+    entity: sensor.trash_pickups_raw1
+    condition: '{{ states(''sensor.trash_pickups_raw1'') }}'
+  - type: custom:template-entity-row
+    icon: mdi:trash-can-outline
+    name: '{{ state_attr(''sensor.trash_pickups_raw0'', ''container'')[''waste_fraction''][''name''] }}'
+    state: '{{ state_attr(''sensor.trash_pickups_raw0'', ''scheduled_at'') }}'
+    secondary: '{{ state_attr(''sensor.trash_pickups_raw0'', ''container'')[''container_type''][''name''] }}'
+    active: >-
+      {{ state_attr('sensor.trash_pickups_raw0', 'scheduled_at') ==
+      now().strftime('%Y-%m-%d') }}
+    entity: sensor.trash_pickups_raw0
+    condition: '{{ states(''sensor.trash_pickups_raw0'') }}'
