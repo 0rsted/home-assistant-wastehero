@@ -1,9 +1,15 @@
+- platform: template
+  sensors:
+    wastehero_location_id:
+      value_template: [ YOUR ID! ]
+    wastehero_api_key:
+      value_template: [ YOUR API KEY ]
 - platform: rest
   name: 'trash.pickups.raw0'
   icon: 'mdi:trash-can-outline'
-  resource: 'https://platform-api.wastehero.io/api-crm-portal/v1/property/[ YOUR ID! ]/collections'
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
   headers:
-    X-API-Key: '[ YOUR API KEY ]'
+    X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
@@ -19,9 +25,9 @@
 - platform: rest
   name: 'trash.pickups.raw1'
   icon: 'mdi:trash-can-outline'
-  resource: 'https://platform-api.wastehero.io/api-crm-portal/v1/property/[ YOUR ID! ]/collections'
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
   headers:
-    X-API-Key: '[ YOUR API KEY ]'
+    X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
@@ -37,9 +43,9 @@
 - platform: rest
   name: 'trash.pickups.raw2'
   icon: 'mdi:trash-can-outline'
-  resource: 'https://platform-api.wastehero.io/api-crm-portal/v1/property/[ YOUR ID! ]/collections'
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
   headers:
-    X-API-Key: '[ YOUR API KEY ]'
+    X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
@@ -55,9 +61,9 @@
 - platform: rest
   name: 'trash.pickups.raw3'
   icon: 'mdi:trash-can-outline'
-  resource: 'https://platform-api.wastehero.io/api-crm-portal/v1/property/[ YOUR ID! ]/collections'
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
   headers:
-    X-API-Key: '[ YOUR API KEY ]'
+    X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
@@ -73,9 +79,9 @@
 - platform: rest
   name: 'trash.pickups.raw4'
   icon: 'mdi:trash-can-outline'
-  resource: 'https://platform-api.wastehero.io/api-crm-portal/v1/property/[ YOUR ID! ]/collections'
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
   headers:
-    X-API-Key: '[ YOUR API KEY ]'
+    X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
@@ -91,9 +97,9 @@
 - platform: rest
   name: 'trash.pickups.raw5'
   icon: 'mdi:trash-can-outline'
-  resource: 'https://platform-api.wastehero.io/api-crm-portal/v1/property/[ YOUR ID! ]/collections'
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
   headers:
-    X-API-Key: '[ YOUR API KEY ]'
+    X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
