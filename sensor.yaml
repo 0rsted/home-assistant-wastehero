@@ -1,114 +1,114 @@
 - platform: template
   sensors:
     wastehero_location_id:
-      value_template: [ YOUR ID! ]
+      value_template: 'UHJvcGVydHlUeXBlOjQ0OTk3MA=='
     wastehero_api_key:
-      value_template: [ YOUR API KEY ]
+      value_template: '9f41bae3-4a2d-4963-9e03-404d4dd120a6'
 - platform: rest
   name: 'trash.pickups.raw0'
   icon: 'mdi:trash-can-outline'
-  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collection_log
   headers:
     X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
-      {{ today_at("00:00").timestamp() | timestamp_local() }}
+      {{ today_at("00:00").strftime('%Y-%m-%d') }}
     to_date: >
-      {{ as_timestamp(today_at("00:00") + timedelta( weeks = 5 )) | timestamp_local() }}
+      {{ (today_at("00:00") + timedelta( weeks = 5 )).strftime('%Y-%m-%d') }}
   scan_interval: 86400
   value_template: "{{ value_json|length > 0 }}"
   json_attributes_path: "$.[0]"
   json_attributes:
     - container
-    - scheduled_at
+    - date
 - platform: rest
   name: 'trash.pickups.raw1'
   icon: 'mdi:trash-can-outline'
-  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collection_log
   headers:
     X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
-      {{ today_at("00:00").timestamp() | timestamp_local() }}
+      {{ today_at("00:00").strftime('%Y-%m-%d') }}
     to_date: >
-      {{ as_timestamp(today_at("00:00") + timedelta( weeks = 5 )) | timestamp_local() }}
+      {{ (today_at("00:00") + timedelta( weeks = 5 )).strftime('%Y-%m-%d') }}
   scan_interval: 86400
   value_template: "{{ value_json|length > 1 }}"
   json_attributes_path: "$.[1]"
   json_attributes:
     - container
-    - scheduled_at
+    - date
 - platform: rest
   name: 'trash.pickups.raw2'
   icon: 'mdi:trash-can-outline'
-  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collection_log
   headers:
     X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
-      {{ today_at("00:00").timestamp() | timestamp_local() }}
+      {{ today_at("00:00").strftime('%Y-%m-%d') }}
     to_date: >
-      {{ as_timestamp(today_at("00:00") + timedelta( weeks = 5 )) | timestamp_local() }}
+      {{ (today_at("00:00") + timedelta( weeks = 5 )).strftime('%Y-%m-%d') }}
   scan_interval: 86400
   value_template: "{{ value_json|length > 2 }}"
   json_attributes_path: "$.[2]"
   json_attributes:
     - container
-    - scheduled_at
+    - date
 - platform: rest
   name: 'trash.pickups.raw3'
   icon: 'mdi:trash-can-outline'
-  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collection_log
   headers:
     X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
-      {{ today_at("00:00").timestamp() | timestamp_local() }}
+      {{ today_at("00:00").strftime('%Y-%m-%d') }}
     to_date: >
-      {{ as_timestamp(today_at("00:00") + timedelta( weeks = 5 )) | timestamp_local() }}
+      {{ (today_at("00:00") + timedelta( weeks = 5 )).strftime('%Y-%m-%d') }}
   scan_interval: 86400
   value_template: "{{ value_json|length > 3 }}"
   json_attributes_path: "$.[3]"
   json_attributes:
     - container
-    - scheduled_at
+    - date
 - platform: rest
   name: 'trash.pickups.raw4'
   icon: 'mdi:trash-can-outline'
-  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collection_log
   headers:
     X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
-      {{ today_at("00:00").timestamp() | timestamp_local() }}
+      {{ today_at("00:00").strftime('%Y-%m-%d') }}
     to_date: >
-      {{ as_timestamp(today_at("00:00") + timedelta( weeks = 5 )) | timestamp_local() }}
+      {{ (today_at("00:00") + timedelta( weeks = 5 )).strftime('%Y-%m-%d') }}
   scan_interval: 86400
   value_template: "{{ value_json|length > 4 }}"
   json_attributes_path: "$.[4]"
   json_attributes:
     - container
-    - scheduled_at
+    - date
 - platform: rest
   name: 'trash.pickups.raw5'
   icon: 'mdi:trash-can-outline'
-  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collections
+  resource_template: https://platform-api.wastehero.io/api-crm-portal/v1/property/{{ states('sensor.wastehero_location_id') }}/collection_log
   headers:
     X-API-Key: '{{ states(''sensor.wastehero_api_key'') }}'
   method: GET
   params:
     from_date: > 
-      {{ today_at("00:00").timestamp() | timestamp_local() }}
+      {{ today_at("00:00").strftime('%Y-%m-%d') }}
     to_date: >
-      {{ as_timestamp(today_at("00:00") + timedelta( weeks = 5 )) | timestamp_local() }}
+      {{ (today_at("00:00") + timedelta( weeks = 5 )).strftime('%Y-%m-%d') }}
   scan_interval: 86400
   value_template: "{{ value_json|length > 5 }}"
   json_attributes_path: "$.[5]"
   json_attributes:
     - container
-    - scheduled_at
+    - date
