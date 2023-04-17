@@ -1,9 +1,9 @@
 - platform: template
   sensors:
     wastehero_location_id:
-      value_template: 'UHJvcGVydHlUeXBlOjQ0OTk3MA=='
+      value_template: [ YOUR ID! ]
     wastehero_api_key:
-      value_template: '9f41bae3-4a2d-4963-9e03-404d4dd120a6'
+      value_template: [ YOUR API KEY ]
 - platform: rest
   name: 'trash.pickups.raw0'
   icon: 'mdi:trash-can-outline'
